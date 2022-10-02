@@ -7,7 +7,7 @@ Simply put, such leaks can lead to inflated performance metrics for models that 
 ## 2. Aim
 
 The goal of this project is to provide a comprehensive table for practitioners of potential data leaks in ML/DS systems, along with best practices for avoiding them, quick-fix examples, and, where possible, tests to check if data is affected by such leaks. 
-The cases are sourced from both competitions and practical scenarios, with links to discussions or sources provided where possible.
+The cases are sourced from both competitions and practical scenarios, with links to discussions or sources provided where possible. The material about errors in DS research papers is in [Leakage and the reproducibility crisis in machine-learning-based science Sayash Kapoor, Arvind Narayanan](https://arxiv.org/abs/2207.07048) it concentrates more on taxonomy without technical details like SIFTs in this repository.
 
 ## 3. Code
 
