@@ -4,6 +4,11 @@ This project is about data leaks in Machine Learning/Data Science (ML/DS) system
 occurs due to errors in experiment design, data preparation, data modeling  which can affect the final predictive system by lowering its generalization capabilities and/or skewing performance estimations. 
 Simply put, such leaks can lead to inflated performance metrics for models that actually have lower predictive power when deployed.
 
+Out of scope:
+1) SecurityOps: Breaches and raw data exposure e.g. unsecured accounts
+2) Membership inference, reference, popultion, prompt attacks
+3) ML competition specific metric probing/abuses and platform related abuses
+
 ## 2. Aim
 
 The goal of this project is to provide a comprehensive table for practitioners of potential data leaks in ML/DS systems, along with best practices for avoiding them, quick-fix examples, and, where possible, tests to check if data is affected by such leaks. 
@@ -37,3 +42,7 @@ contains examples of particular lines replacment to exterminate the data leak.
 | 9 | [Test intersects train](/cases/test_intersect_train.md) | Overesteemed results | Identical rows between test and train | dataset preparation | Train test split and/or duplicate check | [kaggle "Arxiv Title Generation" competition YURY KASHNITSKY post](https://www.kaggle.com/code/kashnitsky/arxiv-title-generation-dumb-baseline) |
 | 10 | [Recoverable/restorable/de-anonymizable features, objects when it's not intended](/cases/recoverable_features_objs.md) | Exposure of private data possible/no such data field during production | - | dataset preparation | anonimization, encoding | [kaggle "Optiver Realized Volatility Prediction" competition nyanpn comment](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/discussion/274970#1526988) |
 | 11 | [Evaluation intersect test<br>e.g. early stoping on test](/cases/test_based_evaluation.md) | Overesteemed results | Test usage more than only for final estimtion of model perfomance | modeling | Fit/train code | [stackoverflow "LightGBM eval question"  paperskilltrees comment](https://stackoverflow.com/a/71581716/7607734) |
+
+## 5. Rights
+This project is currently unsponsored and not affiliated with any institution. 
+For inquiries about incorporating it into your program or publication, please contact grigoriy.tarasov.u@gmail.com.
