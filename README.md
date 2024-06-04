@@ -6,8 +6,10 @@ Simply put, such leaks can lead to inflated performance metrics for models that 
 
 Out of scope:
 1) SecurityOps: Breaches and raw data exposure e.g. unsecured accounts
-2) Membership inference, reference, popultion, prompt attacks
+2) Membership inference, reference, popultion
 3) ML competition specific metric probing/abuses and platform related abuses
+
+Adversarial prompt attacks are in scope.
 
 ## 2. Aim
 
@@ -28,7 +30,6 @@ contains examples of particular lines replacment to exterminate the data leak.
 
 ## 4. Table of  leaks summaries
 
-
 | id | name and detail link | effect | symptom | stage | locate in code |  met or loosely based on |
 | -- | -- | --- | --- | ---- | --- | --- |
 | 1 | [Restorable vids in train<br>but frames in prod](/cases/prod_frame_train_vid.md) | Overesteemed results |  - | ground truth gathering<br>dataset preparation | croping on frames | [kaggle "State Farm Distracted Driver Detection" competition JACOBKIE solution](https://www.kaggle.com/c/state-farm-distracted-driver-detection/discussion/22906) |
@@ -43,6 +44,7 @@ contains examples of particular lines replacment to exterminate the data leak.
 | 10 | [Recoverable/restorable/de-anonymizable features, objects when it's not intended](/cases/recoverable_features_objs.md) | Exposure of private data possible/no such data field during production | - | dataset preparation | anonimization, encoding | [kaggle "Optiver Realized Volatility Prediction" competition nyanpn comment](https://www.kaggle.com/competitions/optiver-realized-volatility-prediction/discussion/274970#1526988) |
 | 11 | [Evaluation intersect test<br>e.g. early stoping on test](/cases/test_based_evaluation.md) | Overesteemed results | Test usage more than only for final estimtion of model perfomance | modeling | Fit/train code | [stackoverflow "LightGBM eval question"  paperskilltrees comment](https://stackoverflow.com/a/71581716/7607734) |
 | 12 | [OHE 1-target](/cases/ohe_target_as_feature.md) | No generalization | 100% on trian and error on new data | modeling | Check train/fit code | [datacamp "Predicting Credit Card Approvals" project](https://app.datacamp.com/learn/projects/1908) |
+| 13 | [Adversarial prompt attacks](/cases/adversarial_prompt_attacks.md) | Overestimated score | Cosine similarity is used e.g. for prompt recovery quality estimation | ML task setting: metric choice for model scoring |  | [kaggle "LLM Prompt Recovery" competition KHOI NGUYEN solution](https://www.kaggle.com/competitions/llm-prompt-recovery/discussion/494343) |
 
 ## 5. Rights
 This project is currently unsponsored and not affiliated with any institution. 
